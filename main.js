@@ -51,24 +51,17 @@ const numeros = [2, [4, [5, 6], 7], 9];
 const fa = numeros.flat(Infinity);
 console.log(fa);
 
-// Object create
+// Desectructuración
 const person = {
-    name: "Juan",
+    name: "Yo Robot",
     isHuman: false,
     direccion: { calle: "Pez", city: "Teruel" },
-    greet: function () {
-        console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
-    },
 };
 
-const me = Object.create(person);
+const me = structuredClone(person);
 
-me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
-me.isHuman = true; // Inherited properties can be overwritten
+me.name = "Pepe";
+me.isHuman = true;
 me.direccion.city = "Cuenca";
 
-person.greet();
-me.greet();
-// Expected output: "My name is Matthew. Am I human? true"
-console.log(person);
-console.log(me);
+console.log(person, me);
