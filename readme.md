@@ -49,35 +49,6 @@ isHuman: true,
 <mark>direccion: { calle: 'Pez', city: 'Cuenca' }</mark>
 }
 
-### 2-Object.create(obj)
-
-Solo desestructura el primer nivel. La dirección no se copia, pero sigue compartida.
-
-```js
-// Object create
-const person = {
-    name: "Yo Robot",
-    isHuman: false,
-    direccion: { calle: "Pez", city: "Teruel" },
-    greet: function () {
-        console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
-    },
-};
-
-const me = Object.create(person);
-
-me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
-me.isHuman = true; // Inherited properties can be overwritten
-me.direccion.city = "Cuenca";
-```
-
-Salida:
-{
-name: 'Yo Robot',
-isHuman: false,
-<mark> direccion: { calle: 'Pez', city: 'Cuenca' } </mark>
-} { name: 'Pepe', isHuman: true }
-
 ### 3-structuredClone()
 
 Desestructura todos los niveles.
@@ -141,7 +112,7 @@ isHuman: true,
 direccion: { calle: 'Pez', city: 'Cuenca' }
 }
 
-### 5-JSON.parse(JSON.stringify(obj))
+### 4-JSON.parse(JSON.stringify(obj))
 
 Esta forma también desestructura todos los niveles.
 
@@ -171,3 +142,41 @@ name: 'Pepe',
 isHuman: true,
 direccion: { calle: 'Pez', city: 'Cuenca' }
 }
+
+## Prototipos
+
+'**proto**'
+
+### Object.create(obj)
+
+Asigna el prototipo del objeto creado a 'obj'
+
+```js
+// Object create
+const person = {
+    name: "Yo Robot",
+    isHuman: false,
+    direccion: { calle: "Pez", city: "Teruel" },
+    greet: function () {
+        console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+    },
+};
+
+const me = Object.create(person);
+
+me.name = "Matthew"; // "name" is a property set on "me", but not on "person"
+me.isHuman = true; // Inherited properties can be overwritten
+me.direccion.city = "Cuenca";
+```
+
+Salida:
+{
+name: 'Yo Robot',
+isHuman: false,
+<mark> direccion: { calle: 'Pez', city: 'Cuenca' } </mark>
+} { name: 'Pepe', isHuman: true }
+
+##
+
+https://github.com/getify/Functional-Light-JS
+https://mostly-adequate.gitbook.io/mostly-adequate-guide
