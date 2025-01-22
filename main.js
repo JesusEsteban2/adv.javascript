@@ -65,4 +65,4 @@ me.isHuman = true;
 me.direccion.city = "Cuenca";
 
 console.log(person, me);
-Object.assign;
+const obj1 = Object.assign;
