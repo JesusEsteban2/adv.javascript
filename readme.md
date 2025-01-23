@@ -180,3 +180,7 @@ isHuman: false,
 
 https://github.com/getify/Functional-Light-JS
 https://mostly-adequate.gitbook.io/mostly-adequate-guide
+
+Kyle Simpson: https://me.getify.com/
+Lydia Hallie: https://www.theavocoder.com/
+https://www.eloquentjavascript.es/
