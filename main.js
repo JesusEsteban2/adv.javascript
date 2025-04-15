@@ -60,6 +60,10 @@ const person = {
 
 const me = structuredClone(person);
 
+const audio = new Audio("./asset/background.mp3");
+audio.controls;
+audio.autoplay = true;
+
 me.name = "Pepe";
 me.isHuman = true;
 me.direccion.city = "Cuenca";
