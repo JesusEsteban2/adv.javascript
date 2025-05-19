@@ -62,4 +62,3 @@ invoice1.addClient(company1);
 invoice1.print();
 const invoice2 = new Invoice(2, "Peras", 5, 1.5);
 invoice2.print();
-// p4u3

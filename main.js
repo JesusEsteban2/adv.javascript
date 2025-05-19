@@ -5,9 +5,10 @@ function testArray() {
         if (item === 3) {
         }
     });
-    console.log(Object.is(a, b));
+    console.log(Object.is(a));
 }
 
+testArray();
 const fun = (a, b) => a + b;
 console.log(fun(2, 3)); //5
 
@@ -16,7 +17,7 @@ const per = (name, age) => {
 };
 console.dir(per("pepe", 22));
 
-const modifiObject = (obj) => {
+const modifyObject = (obj) => {
     obj.age = 23;
 };
 
@@ -32,7 +33,7 @@ const user = {
 };
 
 console.log("Original:", user);
-modifiObject(user);
+modifyObject(user);
 console.log("Despues de modify: ", user);
 calcuNextAge(user);
 console.log("Despues de calculate: ", user);
